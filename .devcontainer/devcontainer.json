@@ -1,6 +1,7 @@
 {
 	"name": "Go",
 	"dockerFile": "Dockerfile",
+	"appPort": 9000,
 	"extensions": [
 		"ms-vscode.go"
 	],

@@ -13,7 +13,7 @@ Some things to try:
 1. **Edit:**
    1. Open `server.go`
    2. Try adding some code and check out the language features.
-2. **Terminal:** Press <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>\`</kbd> and type `uname` and or other Linux commands from the terminal window.
+2. **Terminal:** Press <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>\`</kbd> and type `uname` and other Linux commands from the terminal window.
 2. **Build, Run, and Debug:**
    1. Open `sever.go`
    2. Add a breakpoint.

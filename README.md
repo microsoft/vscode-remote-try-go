@@ -10,16 +10,16 @@ One you have this sample opened in a container, you'll be able to work with it l
 
 Some things to try:
 
-2. **Edit:**
+1. **Edit:**
    1. Open `server.go`
    2. Try adding some code and check out the language features.
-3. **Build, Run, and Debug:**
+2. **Build, Run, and Debug:**
    1. Open `sever.go`
    2. Add a breakpoint.
    3. Press <kbd>F5</kbd> to launch the app in the container.
    4. Open a local browser and go to `http://localhost:9000` and note you can connect to the server in the container.
    5. Once the breakpoint is hit, try hovering over variables, examining locals, and more.
-4. **Forward another port:**
+3. **Forward another port:**
    1. Stop debugging
    2. Open `sever.js`
    3. Change the server port to 5000. (`portNumber := "5000"`)

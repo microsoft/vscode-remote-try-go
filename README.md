@@ -21,7 +21,7 @@ Some things to try:
    5. Once the breakpoint is hit, try hovering over variables, examining locals, and more.
 3. **Forward another port:**
    1. Stop debugging
-   2. Open `sever.js`
+   2. Open `sever.go`
    3. Change the server port to 5000. (`portNumber := "5000"`)
    4. Press <kbd>F5</kbd> to launch the app in the container.
    5. Press <kbd>F1</kbd> and run the **Remote-Containers: Forward Port...** command.

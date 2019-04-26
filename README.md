@@ -15,14 +15,14 @@ Some things to try:
    2. Try adding some code and check out the language features.
 2. **Terminal:** Press <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>\`</kbd> and type `uname` and other Linux commands from the terminal window.
 2. **Build, Run, and Debug:**
-   1. Open `sever.go`
+   1. Open `server.go`
    2. Add a breakpoint (e.g. on line 22).
    3. Press <kbd>F5</kbd> to launch the app in the container.
    5. Once the breakpoint is hit, try hovering over variables, examining locals, and more.
    4. Continue, then open a local browser and go to `http://localhost:9000` and note you can connect to the server in the container.
 3. **Forward another port:**
    1. Stop debugging and remove the breakpoint.
-   2. Open `sever.go`
+   2. Open `server.go`
    3. Change the server port to 5000. (`portNumber := "5000"`)
    4. Press <kbd>F5</kbd> to launch the app in the container.
    5. Press <kbd>F1</kbd> and run the **Remote-Containers: Forward Port...** command.

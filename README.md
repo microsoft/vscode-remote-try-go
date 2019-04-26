@@ -1,12 +1,12 @@
 # Try Out Development Containers: Go
 
-This is a sample project to go along with the "try" quick start for the **[VS Code Remote - Containers](https://aka.ms/vscode-remote/containers)** extension.
+This is a sample project to go along with the "Try a dev container" quick start for the **[VS Code Remote - Containers](https://aka.ms/vscode-remote/containers)** extension.
 
-**If you aren't already following the quick start, [see here](#setting-up-the-development-container).**
+**If you aren't already following the quick start, [see below](#setting-up-the-development-container).**
 
 ## Things to try
 
-One you have this sample opened in a container, you'll be able to work with it like you would locally.
+Once you have this sample opened in a container, you'll be able to work with it like you would locally.
 
 Some things to try:
 
@@ -56,5 +56,5 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 ## License
 
-Copyright Â© Microsoft Corporation All rights reserved.<br />
+Copyright © Microsoft Corporation All rights reserved.<br />
 Licensed under the MIT License. See LICENSE in the project root for license information.

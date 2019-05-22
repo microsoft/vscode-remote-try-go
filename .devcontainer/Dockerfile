@@ -5,6 +5,11 @@
 
 FROM golang:1
 
+# Configure apt
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update \
+    && apt-get -y install --no-install-recommends apt-utils 2>&1
+
 RUN go get -u -v \
     github.com/mdempsky/gocode \
     github.com/uudashr/gopkgs/cmd/gopkgs \
@@ -24,18 +29,21 @@ RUN go get -u -v \
     github.com/derekparker/delve/cmd/dlv 2>&1
 
 # gocode-gomod
-RUN go get -x -d github.com/stamblerre/gocode \
+RUN go get -x -d github.com/stamblerre/gocode 2>&1 \
     && go build -o gocode-gomod github.com/stamblerre/gocode \
     && mv gocode-gomod $GOPATH/bin/
 
 # Copy default endpoint specific user settings overrides into container to specify Go path
 COPY settings.vscode.json /root/.vscode-remote/data/Machine/settings.json
 
-# Verify git, process tools installed
-RUN apt-get update && apt-get -y install git procps
+# Install git, process tools, lsb-release (common in install instructions for CLIs)
+RUN apt-get -y install git procps lsb-release
 
 # Clean up
 RUN apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
+ENV DEBIAN_FRONTEND=dialog
 
+# Set the default shell to bash rather than sh
+ENV SHELL /bin/bash

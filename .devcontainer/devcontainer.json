@@ -9,5 +9,8 @@
 		"--cap-add=SYS_PTRACE",
 		"--security-opt",
 		"seccomp=unconfined"
-	]
+	],
+	"settings": {
+		"go.gopath": "/go"
+	}
 }

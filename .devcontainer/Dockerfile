@@ -21,6 +21,7 @@ RUN go get -u -v \
     github.com/rogpeppe/godef \
     github.com/zmb3/gogetdoc \
     github.com/sqs/goreturns \
+    github.com/josharian/impl \
     golang.org/x/tools/cmd/goimports \
     golang.org/x/lint/golint \
     golang.org/x/tools/cmd/gopls \

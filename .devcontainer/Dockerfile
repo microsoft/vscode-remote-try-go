@@ -22,6 +22,7 @@ RUN go get -u -v \
     github.com/zmb3/gogetdoc \
     github.com/sqs/goreturns \
     github.com/josharian/impl \
+    github.com/davidrjenni/reftools/cmd/fillstruct \
     golang.org/x/tools/cmd/goimports \
     golang.org/x/lint/golint \
     golang.org/x/tools/cmd/gopls \

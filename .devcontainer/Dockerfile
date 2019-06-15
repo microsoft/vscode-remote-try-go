@@ -42,6 +42,7 @@ RUN go get -u -v \
     github.com/josharian/impl \
     github.com/davidrjenni/reftools/cmd/fillstruct \
     github.com/fatih/gomodifytags \
+    github.com/cweill/gotests/... \
     golang.org/x/tools/cmd/goimports \
     golang.org/x/lint/golint \
     golang.org/x/tools/cmd/gopls \

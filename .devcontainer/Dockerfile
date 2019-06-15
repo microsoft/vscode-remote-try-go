@@ -22,6 +22,7 @@ RUN go get -u -v \
     github.com/sqs/goreturns \
     golang.org/x/tools/cmd/goimports \
     golang.org/x/lint/golint \
+    golang.org/x/tools/cmd/gopls \
     github.com/alecthomas/gometalinter \
     honnef.co/go/tools/... \
     github.com/golangci/golangci-lint/cmd/golangci-lint \

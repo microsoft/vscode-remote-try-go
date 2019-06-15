@@ -7,7 +7,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/microsoft/vscode-remote-try-go/hello"
+	"hello"
 	"io"
 	"net/http"
 )

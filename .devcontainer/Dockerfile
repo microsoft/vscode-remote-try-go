@@ -15,6 +15,7 @@ RUN go get -u -v \
     github.com/uudashr/gopkgs/cmd/gopkgs \
     github.com/ramya-rao-a/go-outline \
     github.com/acroca/go-symbols \
+    github.com/godoctor/godoctor \
     golang.org/x/tools/cmd/guru \
     golang.org/x/tools/cmd/gorename \
     github.com/rogpeppe/godef \

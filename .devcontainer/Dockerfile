@@ -38,6 +38,7 @@ RUN go get -u -v \
     golang.org/x/tools/cmd/gorename \
     github.com/rogpeppe/godef \
     github.com/zmb3/gogetdoc \
+    github.com/haya14busa/goplay/cmd/goplay \
     github.com/sqs/goreturns \
     github.com/josharian/impl \
     github.com/davidrjenni/reftools/cmd/fillstruct \

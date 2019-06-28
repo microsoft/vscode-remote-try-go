@@ -52,9 +52,9 @@ Some things to try:
 4. **Stub generation:** ( [details](https://github.com/josharian/impl))
    - define a struct `type mock struct {}`, enter a new line , press <kbd>F1</kbd> and run the **Go: Generate interface stubs** command.
    - edit command `m *mock http.ResponseWriter`
-4. **Fill structs:** ( [details](https://github.com/davidrjenni/reftools/tree/master/cmd/fillstruct))
+4. **Fill structs:** ([details](https://github.com/davidrjenni/reftools/tree/master/cmd/fillstruct))
    - Open `hello.go` and select `user{}` of variable asignment, press <kbd>F1</kbd> and run the **Go: Fill struct** command.
-4. **Add json tags to structs:** ( [details](https://github.com/fatih/gomodifytags))
+4. **Add json tags to structs:** ([details](https://github.com/fatih/gomodifytags))
    - Open `hello.go` and go with cursor in to a struct, press <kbd>F1</kbd> and run the **Go: Add Tags To Struct Fields** command.
 
 

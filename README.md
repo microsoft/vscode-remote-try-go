@@ -39,7 +39,26 @@ Some things to try:
    - Press <kbd>F1</kbd> and run the **Remote-Containers: Forward Port from Container...** command.
    - Select port 5000.
    - Click "Open Browser" in the notification that appears to access the web app on this new port.
-  
+3. **Refactoring - rename:**
+    - Open `hello.go`, select method name `Hello` press <kbd>F1</kbd> and run the **Rename Symbol** command.
+3. **Refactoring - extract:**
+   - Open `hello.go` and select string, press <kbd>F1</kbd> and run the **Go: Extract to variable** command.
+   - Open `hello.go` and select line with return statement, press <kbd>F1</kbd> and run the **Go: Extract to function** command.
+3. **Generate tests:**
+    - Open `hello.go` and press <kbd>F1</kbd> and run the **Go: Generate Unit Tests For File** command.
+    - Implement a test case: Open file `hello_test.go` and edit the line with the `TODO` comment: `{"hello without name", "Hello, "},` 
+    - You can toggle between implementation file and test file with press <kbd>F1</kbd> and run the **Go: Toggle Test File**
+    - Tests can also run as benchmarks: Open file `hello_test.go`, press <kbd>F1</kbd> and run the **Go: Benchmark File**
+4. **Stub generation:** ( [details](https://github.com/josharian/impl))
+   - define a struct `type mock struct {}`, enter a new line , press <kbd>F1</kbd> and run the **Go: Generate interface stubs** command.
+   - edit command `m *mock http.ResponseWriter`
+4. **Fill structs:** ( [details](https://github.com/davidrjenni/reftools/tree/master/cmd/fillstruct))
+   - Open `hello.go` and select `user{}` of variable asignment, press <kbd>F1</kbd> and run the **Go: Fill struct** command.
+4. **Add json tags to structs:** ( [details](https://github.com/fatih/gomodifytags))
+   - Open `hello.go` and go with cursor in to a struct, press <kbd>F1</kbd> and run the **Go: Add Tags To Struct Fields** command.
+
+
+
 ## Contributing
 
 This project welcomes contributions and suggestions. Most contributions require you to agree to a

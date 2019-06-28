@@ -7,17 +7,18 @@ package main
 
 import (
 	"fmt"
+	"hello"
 	"io"
 	"net/http"
 )
 
-func hello(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, "Hello remote world!")
+func handle(w http.ResponseWriter, r *http.Request) {
+	io.WriteString(w, hello.Hello())
 }
 
 func main() {
 	portNumber := "9000"
-	http.HandleFunc("/", hello)
+	http.HandleFunc("/", handle)
 	fmt.Println("Server listening on port ", portNumber)
 	http.ListenAndServe(":"+portNumber, nil)
 }

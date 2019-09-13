@@ -35,7 +35,7 @@ RUN apt-get update \
 
 USER $USERNAME
 
-    # Install gocode-gomod
+# Install gocode-gomod
 RUN go get -x -d github.com/stamblerre/gocode 2>&1 \
     && go build -o gocode-gomod github.com/stamblerre/gocode \
     && mv gocode-gomod $GOPATH/bin/ \
@@ -65,3 +65,6 @@ RUN go get -x -d github.com/stamblerre/gocode 2>&1 \
         github.com/golangci/golangci-lint/cmd/golangci-lint \
         github.com/mgechev/revive \
         github.com/derekparker/delve/cmd/dlv 2>&1
+
+# Uncomment the line below if you are using go modules
+# ENV GO111MODULE=on

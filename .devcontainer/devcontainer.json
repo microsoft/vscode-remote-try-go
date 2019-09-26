@@ -19,6 +19,7 @@
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/bash",
 		"go.gopath": "/go",
+		"go.goroot": "/usr/local/go",
 		"go.inferGopath": true,
 		"go.useLanguageServer": true
 	},

@@ -64,7 +64,10 @@ RUN go get -x -d github.com/stamblerre/gocode 2>&1 \
         honnef.co/go/tools/... \
         github.com/golangci/golangci-lint/cmd/golangci-lint \
         github.com/mgechev/revive \
-        github.com/derekparker/delve/cmd/dlv 2>&1
+        github.com/derekparker/delve/cmd/dlv 2>&1 \
+    #
+    # Clean up
+    && rm -rf /go/src
 
 # Uncomment the line below if you are using go modules
 # ENV GO111MODULE=on

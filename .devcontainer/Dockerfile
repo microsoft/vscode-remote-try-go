@@ -68,7 +68,7 @@ RUN apt-get update \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME \
     # Add write permission for /go/pkg
-    && chmod -R a+w /go/pkg \
+    && chmod -R a+rwX /go/pkg \
     #
     # Clean up
     && apt-get autoremove -y \

@@ -39,7 +39,6 @@ RUN apt-get update \
         github.com/sqs/goreturns@latest \
         github.com/josharian/impl@latest \
         github.com/davidrjenni/reftools/cmd/fillstruct@latest \
-        github.com/uudashr/gopkgs/cmd/gopkgs@latest  \
         github.com/ramya-rao-a/go-outline@latest  \
         github.com/acroca/go-symbols@latest  \
         github.com/godoctor/godoctor@latest  \
@@ -50,7 +49,8 @@ RUN apt-get update \
         github.com/go-delve/delve/cmd/dlv@latest 2>&1 \
     #
     # Install Go tools w/o module support
-    && go get -v github.com/alecthomas/gometalinter 2>&1 \
+    && go get -v github.com/alecthomas/gometalinter \
+        github.com/uudashr/gopkgs/cmd/gopkgs 2>&1 \
     #
     # Install gocode-gomod
     && go get -x -d github.com/stamblerre/gocode 2>&1 \
@@ -80,4 +80,3 @@ ENV GO111MODULE=auto
 
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV DEBIAN_FRONTEND=dialog
-

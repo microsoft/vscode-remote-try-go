@@ -1,7 +1,5 @@
 package hello
 
-import ()
-
 // User user type
 type User struct {
 	ID   int64

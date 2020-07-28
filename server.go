@@ -7,9 +7,10 @@ package main
 
 import (
 	"fmt"
-	"hello"
 	"io"
 	"net/http"
+
+	"github.com/microsoft/vscode-remote-try-go/hello"
 )
 
 func handle(w http.ResponseWriter, r *http.Request) {
@@ -17,7 +18,7 @@ func handle(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	portNumber := "9000"
+	portNumber := "5000"
 	http.HandleFunc("/", handle)
 	fmt.Println("Server listening on port ", portNumber)
 	http.ListenAndServe(":"+portNumber, nil)

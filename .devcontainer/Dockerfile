@@ -52,7 +52,7 @@ ARG GO_TOOLS_WITH_MODULES="\
 
 RUN (echo "${GO_TOOLS_WITH_MODULES}" | xargs -n 1 go get )2>&1 \
     # golangci-lint
-    && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b /usr/local/bin 2>&1 \
+    && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b /usr/local/bin 2>&1
 # [Optional] Uncomment the next line to use go get to install anything else you need
 # RUN go get -x <your-dependency-or-tool>
 # [Optional] Uncomment this section to install additional OS packages.

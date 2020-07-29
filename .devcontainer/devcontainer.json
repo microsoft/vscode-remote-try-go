@@ -1,52 +1,31 @@
 {
-  "name": "Go",
-  "build": {
-    "dockerfile": "Dockerfile",
-    // Update the VARIANT arg to pick a version of Go
-    "args": { "VARIANT": "1.14" }
-  },
-  "runArgs": ["--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
+	"name": "Go",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update the VARIANT arg to pick a version of Go
+		"args": { "VARIANT": "1" }
+	},
+	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
 
-  // Set *default* container specific settings.json values on container create.
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash",
-    "go.useLanguageServer": true,
-    "[go]": {
-      "editor.formatOnSave": true,
-      "editor.codeActionsOnSave": {
-        "source.organizeImports": true
-      },
-      // Optional: Disable snippets, as they conflict with completion ranking.
-      "editor.snippetSuggestions": "none"
-    },
-    "[go.mod]": {
-      "editor.formatOnSave": true,
-      "editor.codeActionsOnSave": {
-        "source.organizeImports": true
-      }
-    },
-    "gopls": {
-      // Add parameter placeholders when completing a function.
-			"usePlaceholders": true,
-			// the completion engine is allowed to make suggestions for packages that you do not currently import.
-			"completeUnimported": true,
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"go.gopath": "/go",
+		"go.inferGopath": true,
+		"go.useLanguageServer": true
+	},
+	
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"golang.Go"
+	],
 
-      // If true, enable additional analyses with staticcheck.
-      // Warning: This will significantly increase memory usage.
-      "staticcheck": true
-    },
-    "go.lintTool": "golangci-lint"
-  },
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [9000],
 
-  // Add the IDs of extensions you want installed when the container is created.
-  "extensions": ["golang.Go"],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "go version",
 
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [9000],
-
-  // Use 'postCreateCommand' to run commands after the container is created.
-  // "postCreateCommand": "go version",
-
-  // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
-  "remoteUser": "vscode"
+	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
 }

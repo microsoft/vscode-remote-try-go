@@ -7,9 +7,10 @@ package main
 
 import (
 	"fmt"
-	"hello"
 	"io"
 	"net/http"
+
+	"github.com/microsoft/vscode-remote-try-go/hello"
 )
 
 func handle(w http.ResponseWriter, r *http.Request) {

@@ -6,7 +6,7 @@
             "type": "go",
             "request": "launch",
             "mode": "debug",
-            "program": "${workspaceFolder}/src/main/server.go"
+            "program": "${workspaceFolder}/server.go"
         }
     ]
 }

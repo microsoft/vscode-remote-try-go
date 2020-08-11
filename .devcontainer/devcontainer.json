@@ -1,3 +1,5 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.134.0/containers/go
 {
 	"name": "Go",
 	"build": {
@@ -10,8 +12,8 @@
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/bash",
+		"go.useGoProxyToCheckForToolUpdates": false,
 		"go.gopath": "/go",
-		"go.inferGopath": true,
 		"go.useLanguageServer": true
 	},
 	
@@ -26,6 +28,6 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "go version",
 
-	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	// Comment out to connect as root instead.
 	"remoteUser": "vscode"
 }

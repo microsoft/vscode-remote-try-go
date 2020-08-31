@@ -1,11 +1,16 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.134.0/containers/go
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.137.0/containers/go
 {
 	"name": "Go",
 	"build": {
 		"dockerfile": "Dockerfile",
-		// Update the VARIANT arg to pick a version of Go
-		"args": { "VARIANT": "1" }
+		"args": {
+			// Update the VARIANT arg to pick a version of Go: 1, 1.15, 1.14
+			"VARIANT": "1",
+			// Options
+			"INSTALL_NODE": "false",
+			"NODE_VERSION": "lts/*"
+		}
 	},
 	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
 
@@ -28,6 +33,6 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "go version",
 
-	// Comment out to connect as root instead.
+	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"
 }

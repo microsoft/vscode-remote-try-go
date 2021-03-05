@@ -57,7 +57,7 @@ Some things to try:
 
    > **Note:** In Remote - Containers, you can access your app at `http://localhost:9000` in a local browser. But in a browser-based Codespace, you must click the link from the notification or the `Ports` view so that the service handles port forwarding in the browser and generates the correct URL.
    
-4. **Rebuild or update your container:** (*Currently, only containers with the VS Code Remote - Containers extension can be rebuilt.*)
+4. **Rebuild or update your container:** 
 
    You may want to make changes to your container, such as installing a different version of a software or forwarding a new port. You'll rebuild your container for your changes to take effect. 
 
@@ -67,7 +67,7 @@ Some things to try:
    
    - Open the `.devcontainer/devcontainer.json` file.
    - Uncomment the `forwardedPorts` attribute and adjust the port number as needed.
-   - Press <kbd>F1</kbd> and select the **Remote-Containers: Rebuild Container** command so the modifications are picked up.
+   - Press <kbd>F1</kbd> and select the **Remote-Containers: Rebuild Container** or **Codespaces: Rebuild Container** command so the modifications are picked up.
 5. **Refactoring - rename:**
     - Open `hello.go`, select method name `Hello` press <kbd>F1</kbd> and run the **Rename Symbol** command.
 6. **Refactoring - extract:**

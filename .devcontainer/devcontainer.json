@@ -19,13 +19,7 @@
 		"terminal.integrated.shell.linux": "/bin/bash",
 		"go.toolsManagement.checkForUpdates": "local",
 		"go.gopath": "/go",
-		"go.useLanguageServer": true,
-		"remote.portsAttributes": {
-			"9000": {
-				"label": "My Port",
-				"onAutoForward": "notify"
-			}
-		}
+		"go.useLanguageServer": true
 	},
 	
 	// Add the IDs of extensions you want installed when the container is created.
@@ -38,6 +32,14 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "go version",
+
+	// Use 'portsAttributes' to set default properties for specific forwarded ports.
+	"portsAttributes": {
+		"9000": {
+			"label": "Hello Remote World",
+			"onAutoForward": "notify"
+		}
+	},
 
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"

@@ -334,3 +334,5 @@ ASALocalRun/
 out
 pkg
 debug
+vscode-remote-try-go
+__debug_bin

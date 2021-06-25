@@ -1,3 +1,3 @@
-module github.com/microsoft/vscode-remote-try-go
+module vscode-remote-try-go
 
-go 1.14
+go 1.16

@@ -9,12 +9,16 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-
-	"github.com/microsoft/vscode-remote-try-go/hello"
+	"vscode-remote-try-go/hello"
 )
 
 func handle(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, hello.Hello())
+	names := r.URL.Query()["name"]
+	name := "<default>"
+	if names != nil {
+		name = names[0]
+	}
+	io.WriteString(w, hello.Hello(name))
 }
 
 func main() {

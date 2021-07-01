@@ -1,5 +1,5 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.163.1/containers/go
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.185.0/containers/go
 {
 	"name": "Go",
 	"build": {
@@ -16,7 +16,6 @@
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/bash",
 		"go.toolsManagement.checkForUpdates": "local",
 		"go.gopath": "/go",
 		"go.useLanguageServer": true

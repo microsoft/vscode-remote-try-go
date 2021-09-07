@@ -1,11 +1,11 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.191.0/containers/go
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.194.2/containers/go
 {
 	"name": "Go",
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
-			// Update the VARIANT arg to pick a version of Go: 1, 1.16, 1.15
+			// Update the VARIANT arg to pick a version of Go: 1, 1.17, 1.16
 			"VARIANT": "1.16",
 			// Options
 			"NODE_VERSION": "lts/*"

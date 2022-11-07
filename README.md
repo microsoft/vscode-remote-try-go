@@ -76,9 +76,8 @@ Some things to try:
 6. **Refactoring - extract:**
    - Open `hello.go` and select string, press <kbd>F1</kbd> and run the **Go: Extract to variable** command.
    - Open `hello.go` and select line with return statement, press <kbd>F1</kbd> and run the **Go: Extract to function** command.
-7. **Generate tests:**
-    - Open `hello.go` and press <kbd>F1</kbd> and run the **Go: Generate Unit Tests For File** command.
-    - Implement a test case: Open file `hello_test.go` and edit the line with the `TODO` comment: `{"hello without name", "Hello, "},` 
+7. **Execute tests:**
+    - Open `hello_test.go` and press <kbd>F1</kbd> and run the **Go: Test file** command.
     - You can toggle between implementation file and test file with press <kbd>F1</kbd> and run the **Go: Toggle Test File**
     - Tests can also run as benchmarks: Open file `hello_test.go`, press <kbd>F1</kbd> and run the **Go: Benchmark File**
 8. **Stub generation:** ( [details](https://github.com/josharian/impl))

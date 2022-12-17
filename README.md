@@ -2,7 +2,7 @@
 
 [![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/vscode-remote-try-go)
 
-A **development container** is a running [Docker](https://www.docker.com) container with a well-defined tool/runtime stack and its prerequisites. You can try out development containers with **[GitHub Codespaces](https://github.com/features/codespaces)** or **[Visual Studio Code Dev Containers](https://aka.ms/vscode-remote/containers)**.
+A **development container** is a running container with a well-defined tool/runtime stack and its prerequisites. You can try out development containers with **[GitHub Codespaces](https://github.com/features/codespaces)** or **[Visual Studio Code Dev Containers](https://aka.ms/vscode-remote/containers)**.
 
 This is a sample project that lets you try out either option in a few easy steps. We have a variety of other [vscode-remote-try-*](https://github.com/search?q=org%3Amicrosoft+vscode-remote-try-&type=Repositories) sample projects, too.
 
@@ -12,8 +12,9 @@ This is a sample project that lets you try out either option in a few easy steps
 
 ### GitHub Codespaces
 Follow these steps to open this sample in a Codespace:
-1. Click the Code drop-down menu and select the **Open with Codespaces** option.
-1. Select **+ New codespace** at the bottom on the pane.
+1. Click the **Code** drop-down menu.
+2. Click on the **Codespaces** tab.
+3. Click **Create codespace on main** .
 
 For more info, check out the [GitHub documentation](https://docs.github.com/en/free-pro-team@latest/github/developing-online-with-codespaces/creating-a-codespace#creating-a-codespace).
 
@@ -41,14 +42,14 @@ Follow these steps to open this sample in a container using the VS Code Dev Cont
 
 Once you have this sample opened, you'll be able to work with it like you would locally.
 
-> **Note:** This container runs as a non-root user with sudo access by default. Comment out `"remoteUser": "vscode"` in `.devcontainer/devcontainer.json` if you'd prefer to run as root.
-
 Some things to try:
 
 1. **Edit:**
    - Open `server.go`
    - Try adding some code and check out the language features.
-   - Notice the Go extension is already installed in the container since the `.devcontainer/devcontainer.json` lists `"golang.Go"` as an extension to install automatically when the container is created.
+   - Make a spelling mistake and notice it is detected. The [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) extension was automatically installed because it is referenced in `.devcontainer/devcontainer.json`.
+   - Also notice that utilities like `gopls` and the [Go](https://marketplace.visualstudio.com/items?itemName=golang.Go) extension are installed. Tools are installed in the `mcr.microsoft.com/devcontainers/go` image and Dev Container settings and metadata are automatically picked up from [image labels](https://containers.dev/implementors/reference/#labels).
+
 2. **Terminal:** Press <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>\`</kbd> and type `uname` and other Linux commands from the terminal window.
 3. **Build, Run, and Debug:**
    - Open `server.go`
@@ -71,23 +72,32 @@ Some things to try:
    - Open the `.devcontainer/devcontainer.json` file.
    - Modify the `"onAutoForward"` attribute in your `portsAttributes` from `"notify"` to `"openBrowser"`.
    - Press <kbd>F1</kbd> and select the **Dev Containers: Rebuild Container** or **Codespaces: Rebuild Container** command so the modifications are picked up.
-5. **Refactoring - rename:**
+
+5. **Install Node.js using a Dev Container Feature:**
+   - Press <kbd>F1</kbd> and select the **Dev Containers: Configure Container Features...** or **Codespaces: Configure Container Features...** command.
+   - Type "node" in the text box at the top.
+   - Check check box next to "Node.js (via nvm) and yarn" (published by devcontainers) 
+   - Click OK
+   - Press <kbd>F1</kbd> and select the **Dev Containers: Rebuild Container** or **Codespaces: Rebuild Container** command so the modifications are picked up.
+
+6. **Refactoring - rename:**
     - Open `hello.go`, select method name `Hello` press <kbd>F1</kbd> and run the **Rename Symbol** command.
-6. **Refactoring - extract:**
+7. **Refactoring - extract:**
    - Open `hello.go` and select string, press <kbd>F1</kbd> and run the **Go: Extract to variable** command.
    - Open `hello.go` and select line with return statement, press <kbd>F1</kbd> and run the **Go: Extract to function** command.
-7. **Generate tests:**
+8. **Generate tests:**
     - Open `hello.go` and press <kbd>F1</kbd> and run the **Go: Generate Unit Tests For File** command.
     - Implement a test case: Open file `hello_test.go` and edit the line with the `TODO` comment: `{"hello without name", "Hello, "},` 
     - You can toggle between implementation file and test file with press <kbd>F1</kbd> and run the **Go: Toggle Test File**
     - Tests can also run as benchmarks: Open file `hello_test.go`, press <kbd>F1</kbd> and run the **Go: Benchmark File**
-8. **Stub generation:** ( [details](https://github.com/josharian/impl))
+9. **Stub generation:** ( [details](https://github.com/josharian/impl))
    - define a struct `type mock struct {}`, enter a new line , press <kbd>F1</kbd> and run the **Go: Generate interface stubs** command.
    - edit command `m *mock http.ResponseWriter`
-9. **Fill structs:** ([details](https://github.com/davidrjenni/reftools/tree/master/cmd/fillstruct))
+10. **Fill structs:** ([details](https://github.com/davidrjenni/reftools/tree/master/cmd/fillstruct))
    - Open `hello.go` and select `User{}` of variable asignment, press <kbd>F1</kbd> and run the **Go: Fill struct** command.
-10. **Add json tags to structs:** ([details](https://github.com/fatih/gomodifytags))
+11. **Add json tags to structs:** ([details](https://github.com/fatih/gomodifytags))
    - Open `hello.go` and go with cursor in to a struct, press <kbd>F1</kbd> and run the **Go: Add Tags To Struct Fields** command.
+
 
 ## Contributing
 

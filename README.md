@@ -40,6 +40,15 @@ Follow these steps to open this sample in a container using the VS Code Dev Cont
    
 ## Things to try
 
+### Toolchain
+
+This sample uses Go 1.27 on Debian 13 (Trixie), with the Go tools supplied by the image.
+Run `go test ./...` and `go vet ./...` to check the project, then `go run .` to start the sample.
+
+The editor uses `gopls`, which includes Staticcheck analyzers; a separate Staticcheck executable is not required.
+For command-line Staticcheck analysis, run `golangci-lint run --no-config --default none --enable staticcheck ./...`.
+The standalone Staticcheck 2026.2.1 bundled in the current image cannot read Go 1.27 export data; use the integrated analyzers instead.
+
 Once you have this sample opened, you'll be able to work with it like you would locally.
 
 Some things to try:

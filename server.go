@@ -7,19 +7,20 @@ package main
 
 import (
 	"fmt"
-	"io"
+	"log"
 	"net/http"
 
 	"github.com/microsoft/vscode-remote-try-go/hello"
 )
 
-func handle(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, hello.Hello())
+func handle(w http.ResponseWriter, _ *http.Request) {
+	if _, err := fmt.Fprintln(w, hello.Hello()); err != nil {
+		log.Printf("Failed to write greeting: %v", err)
+	}
 }
 
 func main() {
-	portNumber := "9000"
 	http.HandleFunc("/", handle)
-	fmt.Println("Server listening on port ", portNumber)
-	http.ListenAndServe(":"+portNumber, nil)
+	log.Print("Server listening on http://localhost:9000")
+	log.Fatal(http.ListenAndServe(":9000", nil))
 }

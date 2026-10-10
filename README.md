@@ -40,6 +40,17 @@ Follow these steps to open this sample in a container using the VS Code Dev Cont
    
 ## Things to try
 
+### Toolchain
+
+This sample uses Go 1.27 on Debian 13 (Trixie), with the Go tools supplied by the image.
+Run `go test ./...` and `go vet ./...` to check the project, then `go run .` to start the sample.
+
+The server responds with `Hello remote world!` at `http://localhost:9000`.
+
+The editor uses `gopls`, which includes Staticcheck analyzers; a separate Staticcheck executable is not required.
+For command-line Staticcheck analysis, run `golangci-lint run --no-config --default none --enable staticcheck ./...`.
+The standalone Staticcheck 2026.2.1 bundled in the current image cannot read Go 1.27 export data; use the integrated analyzers instead.
+
 Once you have this sample opened, you'll be able to work with it like you would locally.
 
 Some things to try:
@@ -53,9 +64,9 @@ Some things to try:
 2. **Terminal:** Press <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>\`</kbd> and type `uname` and other Linux commands from the terminal window.
 3. **Build, Run, and Debug:**
    - Open `server.go`
-   - Add a breakpoint (e.g. on line 22).
+   - Add a breakpoint in `handle`, on the call to `hello.Hello()`.
    - Press <kbd>F5</kbd> to launch the app in the container.
-   - Once the breakpoint is hit, try hovering over variables, examining locals, and more.   
+   - Open the forwarded port 9000 to make a request and hit the breakpoint, then step into `hello.Hello`.
    - Continue (<kbd>F5</kbd>). You can connect to the server in the container by either: 
         - Clicking on `Open in Browser` in the notification telling you: `Your service running on port 9000 is available`.
         - Clicking the globe icon in the 'Ports' view. The 'Ports' view gives you an organized table of your forwarded ports, and you can get there by clicking on the "1" in the status bar, which means your app has 1 forwarded port.
@@ -81,22 +92,18 @@ Some things to try:
    - Press <kbd>F1</kbd> and select the **Dev Containers: Rebuild Container** or **Codespaces: Rebuild Container** command so the modifications are picked up.
 
 6. **Refactoring - rename:**
-    - Open `hello.go`, select method name `Hello` press <kbd>F1</kbd> and run the **Rename Symbol** command.
+    - Open [hello/hello.go](hello/hello.go), select the function name `Hello`, press <kbd>F1</kbd> and run the **Rename Symbol** command.
 7. **Refactoring - extract:**
    - Open `hello.go` and select string, press <kbd>F1</kbd> and run the **Go: Extract to variable** command.
    - Open `hello.go` and select line with return statement, press <kbd>F1</kbd> and run the **Go: Extract to function** command.
 8. **Generate tests:**
-    - Open `hello.go` and press <kbd>F1</kbd> and run the **Go: Generate Unit Tests For File** command.
-    - Implement a test case: Open file `hello_test.go` and edit the line with the `TODO` comment: `{"hello without name", "Hello, "},` 
+    - Open [hello/hello.go](hello/hello.go), press <kbd>F1</kbd>, and run **Go: Generate Unit Tests For File**.
+    - In the generated `hello_test.go`, replace the `TODO` comment with `{"greeting", "Hello remote world!"},` and run `go test ./...`.
     - You can toggle between implementation file and test file with press <kbd>F1</kbd> and run the **Go: Toggle Test File**
     - Tests can also run as benchmarks: Open file `hello_test.go`, press <kbd>F1</kbd> and run the **Go: Benchmark File**
 9. **Stub generation:** ( [details](https://github.com/josharian/impl))
    - define a struct `type mock struct {}`, enter a new line , press <kbd>F1</kbd> and run the **Go: Generate interface stubs** command.
    - edit command `m *mock http.ResponseWriter`
-10. **Fill structs:** ([details](https://github.com/davidrjenni/reftools/tree/master/cmd/fillstruct))
-   - Open `hello.go` and select `User{}` of variable asignment, press <kbd>F1</kbd> and run the **Go: Fill struct** command.
-11. **Add json tags to structs:** ([details](https://github.com/fatih/gomodifytags))
-   - Open `hello.go` and go with cursor in to a struct, press <kbd>F1</kbd> and run the **Go: Add Tags To Struct Fields** command.
 
 
 ## Contributing
